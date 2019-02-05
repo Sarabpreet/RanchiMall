@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="app">
+    <input type="text" v-model="text">
+    <svg viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg">
+        <text x="10" y="30" class="text" font-size="{{size}}">{{text}}</text>
+    </svg>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+  <script>
+      var vm=new Vue({
+        el:'#app',
+        data:{
+            text:"default",
+        
+        }
+
+
+      });
+  </script>
+   <style>
+            body{
+                background:#EE227D;
+            }
+            input,select{
+                background:white;
+                padding:5px 15px;
+                font-size: 16px;
+            }
+            .text { 
+                font-family: 'CaveatBrush';
+                font-size: 25px;
+                fill: #EE227D !important; 
+                letter-spacing: -2.5px;
+                text-shadow: 0 2px 80px #99104D;
+            }
+    </style>
+  
+</body>
+</html>
