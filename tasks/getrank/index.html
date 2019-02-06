@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>404 Page</title>
+</head>
+<body>
+    <div id="ani"></div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.4.3/lottie_svg.min.js" type="text/javascript"></script>
+
+<style>
+#ani{
+    width:750px !important;
+    margin: 20px auto;
+}
+</style>
+    <script>
+ var animation = bodymovin.loadAnimation({
+  container: document.getElementById('ani'), // Required
+  path: 'data.json', // downloaded from lottiefiles
+  renderer: 'svg', // Required canvas html can be taken here
+  loop: true, // Optional
+  autoplay: true, // Optional
+  name: "404 sample", // Name for future reference. Optional.
+})
+
+    </script>
+</body>
+</html>
