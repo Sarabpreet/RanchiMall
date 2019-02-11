@@ -34,6 +34,56 @@ coinmarketcap.get("flo", coin => {
 // EVERY SECOND 
 new CronJob('* * * * * *', function() {
   // console.log('You will see this message every second');
-  
+  pulse();
 }, null, true, 'America/Los_Angeles');
 
+function pulse(){
+  var struct={};
+
+  coinmarketcap.get("flo", coin => {
+    // GOT COIN MARKET CAPS 
+    struct=coin;
+    struct.created_at=new Date();
+    console.log(struct);
+    
+    // GET FIREBASES & REMOVE DATE
+
+    // CHECKING IF ONE IS EQUAL TO OTHER 
+    // coin2=
+    console.log(
+      ref.once('val'));
+
+    if(JSON.stringify(coin)===JSON.stringify(coin2)){
+      console.log(true);
+    }
+    else{
+      // SET THIS UP ON SERVER
+       ref.set(struct);
+    }
+
+
+    // console.log(coin); // Prints the price in USD of BTC at the moment.
+   
+    
+  });
+
+  // coinmarketcap.get("flo").then(function(coin){
+  //   struct=coin;
+  //   coin.created_at=new Date();
+  //   console.log(struct);
+
+  // }).error(function(err){
+  //   console.log(err);
+  // })
+
+
+  console.log("i got invoked");
+// GET COIN DETAILS 
+// GET LAST COIN SAVED DETAILS 
+// IS IT SAME?
+// IF YES DO NOTHING
+// IF NOT APPEND IT IN 
+
+}
+// READ MORE ON 
+// https://firebase.google.com/docs/reference/admin/node/admin.database.Query#toJSON
