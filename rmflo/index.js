@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-app.get('/', (req, res) =>res.send('Hello World!'))
+app.get('/', (req, res) =>res.send('RanchiMall'))
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 // PULSE 
@@ -18,20 +18,8 @@ admin.initializeApp({
 });
 
 var db = admin.database();
-var ref = db.ref("flo");
-// var usersRef = ref.child("flo");
+var ref = db.ref("btc");
 
-
-coinmarketcap.get("flo", coin => {
-  // console.log(coin); // Prints the price in USD of BTC at the moment.
-  ref.set(coin);
-});
-
-
-// 
-
-
-// EVERY SECOND 
 new CronJob('* * * * * *', function() {
   // console.log('You will see this message every second');
   pulse();
@@ -48,18 +36,7 @@ function pulse(){
     
     // GET FIREBASES & REMOVE DATE
 
-    // CHECKING IF ONE IS EQUAL TO OTHER 
-    // coin2=
-    console.log(
-      ref.once('val'));
-
-    if(JSON.stringify(coin)===JSON.stringify(coin2)){
-      console.log(true);
-    }
-    else{
-      // SET THIS UP ON SERVER
-       ref.set(struct);
-    }
+    ref.push(struct);
 
 
     // console.log(coin); // Prints the price in USD of BTC at the moment.
