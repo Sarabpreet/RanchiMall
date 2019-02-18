@@ -31,6 +31,8 @@ rootRef.on('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
      childData = childSnapshot.val();
       console.log(childData);
+      plot(childData);
+      
     });
 });
 
