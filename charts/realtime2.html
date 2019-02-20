@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Real Time Data</title>
+</head>
+<body>
+   <div id="app">
+    <svg></svg>
+
+   </div>
+
+    <script src="https://code.createjs.com/1.0.0/tweenjs.min.js"></script>
+    <script src="js/d3.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+//  D3 PLOT WILL GO HERE 
+
+var svgWidth = 600, svgHeight = 400;
+   var margin = { top: 20, right: 20, bottom: 30, left: 50 };
+   var width = svgWidth - margin.left - margin.right;
+   var height = svgHeight - margin.top - margin.bottom;
+
+   var svg = d3.select('svg')
+     .attr("width", svgWidth)
+     .attr("height", svgHeight);
+
+   var  g=  g.append("g")
+   g.append("g")
+   .call(d3.axisLeft(y))
+   .append("text")
+   .attr("fill", "#000")
+   .attr("transform", "rotate(-90)")
+   .attr("y", 6)
+   .attr("dy", "0.71em")
+   .attr("text-anchor", "end")
+   .text("Price ($)");
+
+
+
+// VUE PLOT IS HERE 
+var vm = new Vue({
+    el:"#app",
+    data() {
+    return {
+        thing:"hey there"
+    };
+  },
+});
+    </script>
+<style>
+    svg
+    {
+        border: 1px solid lightgray;
+    }
+</style>
+
+
+</body>
+</html>
