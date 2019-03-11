@@ -1,0 +1,25 @@
+/* LITTI CSS */
+
+/* CSS VARIABLES */
+:root {
+    --main-bg-color:#efefef; 
+    --font:'arial';
+}
+
+
+/* BODY */
+body{
+    font-size: 16px;
+    background:var(--main-bg-color); 
+    font-family:var(--font);
+}
+
+
+
+/* GRID */
+
+/* ELEMENTS */
+
+.btn{
+    width:12px;
+}
