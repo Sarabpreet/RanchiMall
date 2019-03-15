@@ -1,27 +1,25 @@
 /* RANCHI MALL's CSS FRAMEWORK FOR RESPONSIVE WEB ELEMENTS */
 
 /* CONTAINER & WRAPING ELEMENTS */
-
+*{
+      margin:0px;
+      padding:0px;
+}
 
 .box {
     margin: 0 auto;
     position: relative;
-      flex-basis: 0;
-  flex-grow: 1;
-  flex-shrink: 1;
-
 }
 
 
 .block{
- flex-wrap: wrap;
- 
+
+ float:left;
 }
 
 /* BLOCK STANDS FOR 12 COLUMN BLOCK */
 
 .block.is-1{
-
       width: 8.33333%;
 }
 .block.is-2{
@@ -64,8 +62,21 @@
 
      width: 91.66667%;
 }
-
 .block.is-12{
 
       width: 100%;
+}
+
+
+/* BLOCK IN MOBILE */
+
+@media screen and (max-width: 768px) {
+
+
+
+.block[class^='is-'] {
+      width: 100%; 
+  }
+
+
 }
