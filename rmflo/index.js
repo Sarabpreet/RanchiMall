@@ -20,12 +20,13 @@ admin.initializeApp({
 var db = admin.database();
 var ref = db.ref("btc");
 
-new CronJob('* * * * * *', function() {
+new CronJob('* 30 * * * *', function() {
   // console.log('You will see this message every second');
   pulse();
-}, null, true, 'America/Los_Angeles');
+}, null, true, 'Asia/Kolkata');
 
 function pulse(){
+
   var struct={};
 
   coinmarketcap.get("flo", coin => {
@@ -54,7 +55,7 @@ function pulse(){
   // })
 
 
-  console.log("i got invoked");
+  // console.log("i got invoked");
 // GET COIN DETAILS 
 // GET LAST COIN SAVED DETAILS 
 // IS IT SAME?

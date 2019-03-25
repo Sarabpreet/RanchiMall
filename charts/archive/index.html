@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Graphs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+    <div id="chart"></div>
+
+ 
+      <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyABxSJaJKc6gSjexsmpHZK8k9oNPa06KaM",
+          authDomain: "ranchimall.firebaseapp.com",
+          databaseURL: "https://ranchimall.firebaseio.com",
+          projectId: "ranchimall",
+          storageBucket: "ranchimall.appspot.com",
+          messagingSenderId: "158440385954"
+        };
+        firebase.initializeApp(config);
+
+        var rootRef = firebase.database().ref();
+        var childData={};
+        
+rootRef.on('value', function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+     childData = childSnapshot.val();
+      console.log(childData);
+      plot(childData);
+      
+    });
+});
+
+
+        // var defaultDatabase = firebase.database();
+        // https://ranchimall.firebaseio.com/btc
+      </script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="https://code.createjs.com/1.0.0/tweenjs.min.js"></script>
+
+      <script src="js/d3.js"></script>
+      <script src="js/script.js"></script>
+      <script src="js/custom.js"></script>
+
+
+</body>
+</html>
+
+<style>
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.graph .labels.x-labels {
+  text-anchor: middle;
+}
+
+.graph .labels.y-labels {
+  text-anchor: end;
+}
+
+
+.graph {
+  height: 100%;
+  width: 100%;
+}
+
+.graph .grid {
+  stroke: #ccc;
+  stroke-dasharray: 0;
+  stroke-width: 1;
+}
+
+.labels {
+  font-size: 13px;
+}
+
+.label-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  fill: black;
+}
+
+.data {
+  fill: red;
+  stroke-width: 1; 
+}
+#chart rect {
+  fill: #4aaeea;
+}
+
+#chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #fff;
+  shape-rendering: crispEdges;
+}
+
+body {
+  background: #1a1a1a;
+  color: #eaeaea;
+  padding: 10px;
+}
+
+</style>
