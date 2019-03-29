@@ -43,6 +43,22 @@ function plot(x){
     console.log(x);
 }
 
+
+function parseData(obj){
+// STRUCT
+objR={
+  value:[],
+  data:[]
+}
+// LOOP
+forEach(function(obj){
+objR.value.push(obj.rank);
+objR.last_updated.push(obj.last_updated)
+})
+// RETURN
+return objR;
+
+}
       </script>
 
 
@@ -53,50 +69,50 @@ function plot(x){
 
      <script>
 
-var ctx2 = document.getElementById('line').getContext('2d');
-var myLineChart = new Chart(ctx, {
-    type: 'line',
-    data: data,
-    options: options
-});
+// var ctx2 = document.getElementById('line').getContext('2d');
+// var myLineChart = new Chart(ctx, {
+//     type: 'line',
+//     data: data,
+//     options: options
+// });
 
-var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-});
+// var ctx = document.getElementById('myChart').getContext('2d');
+// var myChart = new Chart(ctx, {
+//     type: 'bar',
+//     data: {
+//         labels: ['DATE 1', 'DATE 2','DATE 3'],
+//         datasets: [{
+//             label: '# of Votes',
+//             data: [12, 19, 3, 5, 2, 3],
+//             backgroundColor: [
+//                 'rgba(255, 99, 132, 0.2)',
+//                 'rgba(54, 162, 235, 0.2)',
+//                 'rgba(255, 206, 86, 0.2)',
+//                 'rgba(75, 192, 192, 0.2)',
+//                 'rgba(153, 102, 255, 0.2)',
+//                 'rgba(255, 159, 64, 0.2)'
+//             ],
+//             borderColor: [
+//                 'rgba(255, 99, 132, 1)',
+//                 'rgba(54, 162, 235, 1)',
+//                 'rgba(255, 206, 86, 1)',
+//                 'rgba(75, 192, 192, 1)',
+//                 'rgba(153, 102, 255, 1)',
+//                 'rgba(255, 159, 64, 1)'
+//             ],
+//             borderWidth: 1
+//         }]
+//     },
+//     options: {
+//         scales: {
+//             yAxes: [{
+//                 ticks: {
+//                     beginAtZero: true
+//                 }
+//             }]
+//         }
+//     }
+// });
 
 
      </script>
@@ -113,3 +129,22 @@ var myChart = new Chart(ctx, {
     margin: 0 auto;
 }
 </style>
+
+
+"-Laow7yC8SFmxbO9seeF": {
+  "24h_volume_usd": "180708.929635",
+  "available_supply": "150423607.0",
+  "id": "flo",
+  "last_updated": "1553518740",
+  "market_cap_usd": "11424285.0",
+  "max_supply": "160000000.0",
+  "name": "FLO",
+  "percent_change_1h": "3.3",
+  "percent_change_24h": "-8.2",
+  "percent_change_7d": "40.35",
+  "price_btc": "0.00001893",
+  "price_usd": "0.0759474238",
+  "rank": "262",
+  "symbol": "FLO",
+  "total_supply": "150423607.0"
+},
